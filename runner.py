@@ -1,6 +1,7 @@
 import sys
 
 from extractors.game_data_extractor import split_game_data
+from printer.printer import print_summary
 
 overall_dict = {}
 game_dict = {}
@@ -13,4 +14,5 @@ with open(file_path) as f:
 
 split_game_data(overall_dict, game_dict, lines)
 
-print(len(overall_dict))
+for key in overall_dict:
+    print_summary(key, overall_dict[key])
